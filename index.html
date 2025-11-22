@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sage To-Do</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-root">
+    <div class="card">
+      <header class="header">
+        <div class="logo-wrap">
+          <div class="logo-svg">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="18" y="10" width="28" height="40" rx="4" />
+              <rect x="24" y="6" width="16" height="8" rx="2" />
+              <path d="M18 40c4 0 8-3 10-7 2 4 6 7 10 7" />
+              <path d="M28 35c0 3-1 6-3 8" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="title">Today&apos;s Little List</h1>
+            <p class="subtitle">Keep it light. One small tick at a time.</p>
+          </div>
+        </div>
+        <div class="remaining">
+          <span class="label">Remaining</span>
+          <div class="badge">
+            <span id="remaining-count">0</span>
+            <span class="badge-text">tasks</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="input-row">
+        <div class="search-icon">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="26" cy="26" r="14" />
+            <line x1="36" y1="36" x2="50" y2="50" />
+          </svg>
+        </div>
+        <input
+          id="task-input"
+          type="text"
+          placeholder="Type a tiny task and press Enter…"
+        />
+        <button id="add-btn">Add</button>
+      </div>
+
+      <div id="task-list" class="list"></div>
+
+      <footer class="footer">
+        Tip: check a task slowly and enjoy the little animation.
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
