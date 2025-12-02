@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sage To-Do</title>
+  <title>Sage To-Do — Daily & Monthly</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -10,8 +10,8 @@
     <div class="card">
       <header class="header">
         <div class="logo-wrap">
-          <div class="logo-svg">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
+          <div class="logo-svg" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
               <rect x="18" y="10" width="28" height="40" rx="4" />
               <rect x="24" y="6" width="16" height="8" rx="2" />
               <path d="M18 40c4 0 8-3 10-7 2 4 6 7 10 7" />
@@ -23,34 +23,63 @@
             <p class="subtitle">Keep it light. One small tick at a time.</p>
           </div>
         </div>
-        <div class="remaining">
-          <span class="label">Remaining</span>
-          <div class="badge">
-            <span id="remaining-count">0</span>
-            <span class="badge-text">tasks</span>
+
+        <div class="right-meta">
+          <div class="date-line" id="today-date">—</div>
+          <div class="remaining">
+            <span class="label">Remaining</span>
+            <div class="badge">
+              <span id="remaining-count">0</span>
+              <span class="badge-text">tasks</span>
+            </div>
           </div>
         </div>
       </header>
 
+      <!-- input row with category selector -->
       <div class="input-row">
-        <div class="search-icon">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
+        <div class="search-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
             <circle cx="26" cy="26" r="14" />
             <line x1="36" y1="36" x2="50" y2="50" />
           </svg>
         </div>
+
         <input
           id="task-input"
           type="text"
           placeholder="Type a tiny task and press Enter…"
         />
+
+        <select id="task-category" class="category-select" title="Task type">
+          <option value="daily">Daily</option>
+          <option value="monthly">Monthly</option>
+        </select>
+
         <button id="add-btn">Add</button>
       </div>
 
-      <div id="task-list" class="list"></div>
+      <!-- Two sections: Daily & Monthly -->
+      <div class="sections">
+        <section class="section" id="daily-section">
+          <div class="section-header">
+            <h2>Daily</h2>
+            <div class="section-sub">Today — <span id="daily-date">—</span></div>
+          </div>
+          <div id="daily-list" class="list"></div>
+        </section>
+
+        <section class="section" id="monthly-section">
+          <div class="section-header">
+            <h2>Monthly</h2>
+            <div class="section-sub">This month — <span id="monthly-month">—</span></div>
+          </div>
+          <div id="monthly-list" class="list"></div>
+        </section>
+      </div>
 
       <footer class="footer">
-        Tip: check a task slowly and enjoy the little animation.
+        Tip: small progress adds up.
       </footer>
     </div>
   </div>
